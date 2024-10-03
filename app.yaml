@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: deprecated_apps
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false 
+    syncOptions:
+    - CreateNamespace=true
+  source:
+    repoURL: https://github.com/34fathombelow/deprecated.git
+    targetRevision: main
+    path: deprecated_resources
+    directory:
+      recurse: true
+  destination:
+    server: http://cluster-test:8001
+    namespace: default
