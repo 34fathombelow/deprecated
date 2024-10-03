@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: deprecated_apps
+  name: deprecated-apps
 spec:
   project: default
   syncPolicy:
