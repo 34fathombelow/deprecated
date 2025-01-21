@@ -6,9 +6,9 @@ spec:
   schedule: "*/10 * * * *"
   jobTemplate:
     spec:
+      ttlSecondsAfterFinished: 90
       template:
         spec:
-          ttlSecondsAfterFinished: 90
           containers:
           - name: hello
             image: busybox:1.28
